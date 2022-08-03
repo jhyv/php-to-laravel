@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $user = (new UserService)->getUser($id);
         if(!$user)
-            return response()->json("",404);
+            return response()->json("User not found",404);
 
         return view('user',compact('user'));
     }
