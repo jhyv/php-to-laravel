@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Services\UserService;
 
 class UserController extends Controller
 {
     public function getUser($id)
     {
-        $user = User::findOrFail($id);
+        $user = (new UserService)->getUser($id);
 
         return view('user',compact('user'));
     }
@@ -17,11 +17,16 @@ class UserController extends Controller
     public function updateUser(Request $request)
     {
         $request->validate([
-            'id' => 'required',
+            'id' => 'required|numeric',
             'password' => 'required',
             'comments' => 'required'
         ]);
 
-        return redirect()->url('/user/'.$request->id);
+        $response = (new UserService)->updateUser($request->all());
+
+        return $response === true ? response()->json([
+            'success' => true,
+            'message' => 'User updated successfully'
+        ],200) : $response;
     }
 }
