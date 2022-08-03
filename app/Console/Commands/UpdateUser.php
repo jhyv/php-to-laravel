@@ -56,16 +56,16 @@ class UpdateUser extends Command
         if($validator->fails()){
             $this->info("Invalid parameters: ".$validator->messages()->toJson());
 
-            return false;
+            return 0;
         }
 
         if((new UserService)->updateUser($data))
         {
             $this->info("Command executed successfully");
-            return true;
+            return 1;
         }
         
         $this->info("Command executed unsuccessfully");
-        return false;
+        return 0;
     }
 }

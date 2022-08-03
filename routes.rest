@@ -1,7 +1,12 @@
 POST http://php-to-laravel.test/user
-Accept: application/json
 Content-Type: application/json
 
 {
-    "id" : "1"
+    "id" : "1",
+    "password": "720DF6C2482218518FA20FDC52D4DED7ECC043AB",
+    "comments": "Test Comment"
 }
+
+####
+
+GET http://php-to-laravel.test/user/1

@@ -15,7 +15,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'comments' => $this->faker->text()."\n",
+            'comments' => "Director",
         ];
     }
 

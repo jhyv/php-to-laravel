@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>
-    @hasSection('page_title')
-        @yield('page_title')
+    @hasSection('page-title')
+        User Card -@yield('page-title')
     @else
         PHP TO LARAVEL
     @endif

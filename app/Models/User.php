@@ -21,5 +21,9 @@ class User extends Authenticatable
     public function getCommentsAttribute(){
         return nl2br($this->attributes['comments']);
     }
+
+    public function setCommentsAttribute($value){
+        $this->attributes['comments'] = str_replace("<br />\n","\n",$value);
+    }
     
 }
