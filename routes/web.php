@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/user/{id}',[UserController::class,'getUser']);
+Route::post('/user', [UserController::class,'updateUser']);

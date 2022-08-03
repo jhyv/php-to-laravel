@@ -1,0 +1,7 @@
+POST http://php-to-laravel.test/user
+Accept: application/json
+Content-Type: application/json
+
+{
+    "id" : "1"
+}

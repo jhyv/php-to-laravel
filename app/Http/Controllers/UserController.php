@@ -13,4 +13,15 @@ class UserController extends Controller
 
         return view('user',compact('user'));
     }
+
+    public function updateUser(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+            'password' => 'required',
+            'comments' => 'required'
+        ]);
+
+        return redirect()->url('/user/'.$request->id);
+    }
 }
