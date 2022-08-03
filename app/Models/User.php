@@ -18,5 +18,8 @@ class User extends Authenticatable
     ];
     public $timestamps = false;
 
+    public function getCommentsAttribute(){
+        return nl2br($this->attributes['comments']);
+    }
     
 }
