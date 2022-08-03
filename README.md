@@ -1,3 +1,67 @@
+## PHP TO LARAVEL
+
+## Clone Repository
+```
+git clone https://github.com/jhyv/php-to-laravel
+```
+
+
+## Install composer dependencies
+```
+composer install
+```
+
+
+## Install packages using npm
+```
+npm install
+```
+
+
+## Database Migration
+```
+php artisan migrate
+```
+
+
+## Database Seeder
+```
+php artisan db:seed
+```
+
+
+## Routes
+```php
+GET localhost:8000/user/{id}
+```
+- displays user card page
+- where {id} is the id of the user record in the database
+
+```php
+POST localhost:8000/user
+```
+- update comments property of users table 
+- required parameters: id, password, comments
+
+
+## Console commands
+```php
+php artisan update:user {id} {comments}
+```
+- update comments property of users table
+- where {id} is the id of the user record in the database
+- where {comments} is the input that will be appended to comments column
+
+
+## Tests
+```
+php artisan test
+```
+
+
+
+## Laravel Framework
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
